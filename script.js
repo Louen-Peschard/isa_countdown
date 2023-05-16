@@ -5,6 +5,7 @@ date.setHours(17,30,00);
 function weekend(){
   date = new Date(curr.setDate(curr.getDate() -   curr.getDay()+4));
   date.setHours(17,30,00);
+  document.getElementById("title").innerHTML = "Isa-Weekend";
   document.getElementById("cse").classList.remove("button-active");
   document.getElementById("portugal").classList.remove("button-active");
   document.getElementById("weekend").classList.add("button-active");
