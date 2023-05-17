@@ -1,14 +1,41 @@
 var curr = new Date;
-var date = new Date(curr.setDate(curr.getDate() - curr.getDay()+4));
+var date = new Date(curr.setDate(curr.getDate() - curr.getDay()+5));
 date.setHours(17,30,00);
 
 function weekend(){
-  date = new Date(curr.setDate(curr.getDate() -   curr.getDay()+4));
+  date = new Date(curr.setDate(curr.getDate() -   curr.getDay()+5));
   date.setHours(17,30,00);
   document.getElementById("title").innerHTML = "Isa-Weekend";
   document.getElementById("cse").classList.remove("button-active");
   document.getElementById("portugal").classList.remove("button-active");
   document.getElementById("weekend").classList.add("button-active");
+  
+fire(0.25, {
+  spread: 26,
+  startVelocity: 55,
+});
+
+fire(0.2, {
+  spread: 60,
+});
+
+fire(0.35, {
+  spread: 100,
+  decay: 0.91,
+  scalar: 0.8,
+});
+
+fire(0.1, {
+  spread: 120,
+  startVelocity: 25,
+  decay: 0.92,
+  scalar: 1.2,
+});
+
+fire(0.1, {
+  spread: 120,
+  startVelocity: 45,
+});
 }
 
 function portugal(){
@@ -17,6 +44,33 @@ function portugal(){
   document.getElementById("weekend").classList.remove("button-active");
   document.getElementById("cse").classList.remove("button-active");
   document.getElementById("portugal").classList.add("button-active");
+  
+fire(0.25, {
+  spread: 26,
+  startVelocity: 55,
+});
+
+fire(0.2, {
+  spread: 60,
+});
+
+fire(0.35, {
+  spread: 100,
+  decay: 0.91,
+  scalar: 0.8,
+});
+
+fire(0.1, {
+  spread: 120,
+  startVelocity: 25,
+  decay: 0.92,
+  scalar: 1.2,
+});
+
+fire(0.1, {
+  spread: 120,
+  startVelocity: 45,
+});
 }
 
 function cse(){
@@ -25,6 +79,33 @@ function cse(){
   document.getElementById("weekend").classList.remove("button-active");
   document.getElementById("portugal").classList.remove("button-active");
   document.getElementById("cse").classList.add("button-active");
+  
+fire(0.25, {
+  spread: 26,
+  startVelocity: 55,
+});
+
+fire(0.2, {
+  spread: 60,
+});
+
+fire(0.35, {
+  spread: 100,
+  decay: 0.91,
+  scalar: 0.8,
+});
+
+fire(0.1, {
+  spread: 120,
+  startVelocity: 25,
+  decay: 0.92,
+  scalar: 1.2,
+});
+
+fire(0.1, {
+  spread: 120,
+  startVelocity: 45,
+});
 }
 
 // countdownf48322
@@ -39,7 +120,7 @@ let timer = setInterval(function() {
 
   if(diff < 0){
     diff = today - today;
-    document.getElementById("title").innerHTML = "Terminé !!!";
+    end();
   }
   
   // math
@@ -61,4 +142,51 @@ let timer = setInterval(function() {
 </div>";
 
 }, 1000);
+
+const count = 200,
+  defaults = {
+    origin: { y: 0.7 },
+  };
+
+function fire(particleRatio, opts) {
+  confetti(
+    Object.assign({}, defaults, opts, {
+      particleCount: Math.floor(count * particleRatio),
+    })
+  );
+}
+
+const duration = 15 * 1000,
+  animationEnd = Date.now() + duration,
+  defaults2 = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+function randomInRange(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function end(){
+  const interval = setInterval(function() {
+    const timeLeft = animationEnd - Date.now();
+
+    if (timeLeft <= 0) {
+      return clearInterval(interval);
+    }
+
+    const particleCount = 50 * (timeLeft / duration);
+
+    // since particles fall down, start a bit higher than random
+    confetti(
+      Object.assign({}, defaults2, {
+        particleCount,
+        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+      })
+    );
+    confetti(
+      Object.assign({}, defaults2, {
+        particleCount,
+        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+      })
+    );
+  }, 250);
+}
 
