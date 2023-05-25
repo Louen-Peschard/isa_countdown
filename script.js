@@ -9,33 +9,7 @@ function weekend(){
   document.getElementById("cse").classList.remove("button-active");
   document.getElementById("portugal").classList.remove("button-active");
   document.getElementById("weekend").classList.add("button-active");
-  
-fire(0.25, {
-  spread: 26,
-  startVelocity: 55,
-});
-
-fire(0.2, {
-  spread: 60,
-});
-
-fire(0.35, {
-  spread: 100,
-  decay: 0.91,
-  scalar: 0.8,
-});
-
-fire(0.1, {
-  spread: 120,
-  startVelocity: 25,
-  decay: 0.92,
-  scalar: 1.2,
-});
-
-fire(0.1, {
-  spread: 120,
-  startVelocity: 45,
-});
+  fireChange();
 }
 
 function portugal(){
@@ -45,32 +19,7 @@ function portugal(){
   document.getElementById("cse").classList.remove("button-active");
   document.getElementById("portugal").classList.add("button-active");
   
-fire(0.25, {
-  spread: 26,
-  startVelocity: 55,
-});
-
-fire(0.2, {
-  spread: 60,
-});
-
-fire(0.35, {
-  spread: 100,
-  decay: 0.91,
-  scalar: 0.8,
-});
-
-fire(0.1, {
-  spread: 120,
-  startVelocity: 25,
-  decay: 0.92,
-  scalar: 1.2,
-});
-
-fire(0.1, {
-  spread: 120,
-  startVelocity: 45,
-});
+  fireChange();
 }
 
 function cse(){
@@ -79,33 +28,7 @@ function cse(){
   document.getElementById("weekend").classList.remove("button-active");
   document.getElementById("portugal").classList.remove("button-active");
   document.getElementById("cse").classList.add("button-active");
-  
-fire(0.25, {
-  spread: 26,
-  startVelocity: 55,
-});
-
-fire(0.2, {
-  spread: 60,
-});
-
-fire(0.35, {
-  spread: 100,
-  decay: 0.91,
-  scalar: 0.8,
-});
-
-fire(0.1, {
-  spread: 120,
-  startVelocity: 25,
-  decay: 0.92,
-  scalar: 1.2,
-});
-
-fire(0.1, {
-  spread: 120,
-  startVelocity: 45,
-});
+  fireChange();
 }
 
 // countdownf48322
@@ -190,3 +113,31 @@ function randomInRange(min, max) {
   }, 250);
 }
 
+function fireChange(){
+  fire(0.25, {
+  spread: 26,
+  startVelocity: 55,
+  });
+
+  fire(0.2, {
+    spread: 60,
+  });
+
+  fire(0.35, {
+    spread: 100,
+    decay: 0.91,
+    scalar: 0.8,
+  });
+
+  fire(0.1, {
+    spread: 120,
+    startVelocity: 25,
+    decay: 0.92,
+    scalar: 1.2,
+  });
+
+  fire(0.1, {
+    spread: 120,
+    startVelocity: 45,
+  });
+}
