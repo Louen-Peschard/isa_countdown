@@ -5,6 +5,8 @@ const titleTwo = "Isa-Portugal";
 const dateTwo = new Date('2023-05-26T00:00:00');
 const titleThree = "Soirée CSE";
 const dateThree = new Date('2023-06-30T18:30:00');
+const titleFour = "Anniversaire Lucie";
+const dateFour = new Date('2024-04-26T00:00:00');
 var titleCustom = localStorage.getItem('title');
 var dateCustom = new Date(localStorage.getItem('date'));
   
@@ -29,6 +31,12 @@ function buttonThree(){
   date = dateThree;
   document.getElementById("title").innerHTML = titleThree;
   removeActive(); document.getElementById("button-3").classList.add("button-active");
+  fireChange();
+}
+function buttonFour(){
+  date = dateFour;
+  document.getElementById("title").innerHTML = titleFour;
+  removeActive(); document.getElementById("button-4").classList.add("button-active");
   fireChange();
 }
 
