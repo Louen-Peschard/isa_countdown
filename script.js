@@ -155,7 +155,7 @@ function fire(particleRatio, opts) {
     })
   );
 }
-
+function end(){
 const duration = 15 * 1000,
   animationEnd = Date.now() + duration,
   defaults2 = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
@@ -164,7 +164,7 @@ function randomInRange(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-function end(){
+
   const interval = setInterval(function() {
     const timeLeft = animationEnd - Date.now();
 
