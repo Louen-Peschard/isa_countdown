@@ -5,6 +5,8 @@ const titleTwo = "Isa-Portugal";
 const dateTwo = new Date('2023-05-26T00:00:00');
 const titleThree = "Soirée CSE";
 const dateThree = new Date('2023-06-30T18:30:00');
+var titleCustom = localStorage.getItem('title');
+var dateCustom = new Date(localStorage.getItem('date'));
   
 function weekend(){
   date = new Date(curr.setDate(curr.getDate() -   curr.getDay()+5));
@@ -27,6 +29,17 @@ function buttonThree(){
   date = dateThree;
   document.getElementById("title").innerHTML = titleThree;
   removeActive(); document.getElementById("button-3").classList.add("button-active");
+  fireChange();
+}
+
+function buttonCustom(){
+  removeActive();
+  document.getElementById("div-custom").style.display = 'block';
+  if(dateCustom == '')
+    date = today
+  date = dateCustom;
+  document.getElementById("title").innerHTML = titleCustom;
+  document.getElementById("button-custom").classList.add("button-active");
   fireChange();
 }
 
@@ -142,9 +155,20 @@ function fireChange(){
 }
 
 function removeActive(){
-  
+  document.getElementById("div-custom").style.display = 'none';
   var allElements = document.querySelectorAll('.button-85');
   allElements.forEach((element) => {
   element.classList.remove("button-active");
 });
+}
+
+function saveTitle(){
+ titleCustom = document.getElementById("custom-title").value;
+  localStorage.setItem('title',titleCustom);
+  buttonCustom();
+}
+function saveDate(){
+ dateCustom = new Date(document.getElementById("custom-time").value);
+  localStorage.setItem('date',dateCustom);
+  buttonCustom();
 }
