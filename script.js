@@ -1,33 +1,32 @@
 var curr = new Date;
 var date = new Date(curr.setDate(curr.getDate() - curr.getDay()+5));
 date.setHours(17,30,00);
-
+const titleTwo = "Isa-Portugal";
+const dateTwo = new Date('2023-05-26T00:00:00');
+const titleThree = "Soirée CSE";
+const dateThree = new Date('2023-06-30T18:30:00');
+  
 function weekend(){
   date = new Date(curr.setDate(curr.getDate() -   curr.getDay()+5));
   date.setHours(17,30,00);
   document.getElementById("title").innerHTML = "Isa-Weekend";
-  document.getElementById("cse").classList.remove("button-active");
-  document.getElementById("portugal").classList.remove("button-active");
-  document.getElementById("weekend").classList.add("button-active");
+  removeActive();
+document.getElementById("weekend").classList.add("button-active");
   fireChange();
 }
 
-function portugal(){
-  date = new Date('2023-05-26T00:00:00');
-  document.getElementById("title").innerHTML = "Isa-Portugal";
-  document.getElementById("weekend").classList.remove("button-active");
-  document.getElementById("cse").classList.remove("button-active");
-  document.getElementById("portugal").classList.add("button-active");
+function buttonTwo(){
+  date = dateTwo;
+  document.getElementById("title").innerHTML = titleTwo;
+  removeActive(); document.getElementById("button-2").classList.add("button-active");
   
   fireChange();
 }
 
-function cse(){
-  date = new Date('2023-06-30T18:30:00');
-  document.getElementById("title").innerHTML = "Soirée CSE";
-  document.getElementById("weekend").classList.remove("button-active");
-  document.getElementById("portugal").classList.remove("button-active");
-  document.getElementById("cse").classList.add("button-active");
+function buttonThree(){
+  date = dateThree;
+  document.getElementById("title").innerHTML = titleThree;
+  removeActive(); document.getElementById("button-3").classList.add("button-active");
   fireChange();
 }
 
@@ -140,4 +139,12 @@ function fireChange(){
     spread: 120,
     startVelocity: 45,
   });
+}
+
+function removeActive(){
+  
+  var allElements = document.querySelectorAll('.button-85');
+  allElements.forEach((element) => {
+  element.classList.remove("button-active");
+});
 }
