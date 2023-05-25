@@ -9,7 +9,9 @@
   <button id='weekend' class='button-85 button-active' onclick="weekend()"><b>Isa-Weekend</b></button>
   <button id='button-2' class='button-85' onclick="buttonTwo()"><b>Isa-Portugal</b></button>
   <button id='button-3' class='button-85' onclick="buttonThree()"><b>Soirée CSE</b></button>
+  <button id='button-custom' class='button-85' onclick="buttonCustom()"><b>Custom</b></button>
 </div>
+
 
 <div class="container">
   <div class="balloon white">
@@ -43,4 +45,14 @@
 </div>
   <div id="timer"></div>
   <h1 id="title">Isa-Weekend</h1>
+</div>
+
+<div id="div-custom" style='display: none;'>
+  <label for="custom-time">Choisis une date et un titre !</label>
+  </br>
+  </br>
+<input type="datetime-local" id="custom-time" name="custom-time" value=""
+       onchange="saveDate()">
+<input type="text" id="custom-title" name="custom-title" placeholder='Titre du compte à rebours' value="" onchange="saveTitle()">
+  
 </div>
