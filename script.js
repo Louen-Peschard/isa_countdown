@@ -1,8 +1,8 @@
 var curr = new Date;
 var date = new Date(curr.setDate(curr.getDate() - curr.getDay()+5));
 date.setHours(17,30,00);
-const titleTwo = "Marche des fiertés (Rennes)";
-const dateTwo = new Date('2023-06-17T13:00:00');
+const titleTwo = "Festival du roi Arthur - Bréal";
+const dateTwo = new Date('2023-08-25T14:00:00');
 const titleThree = "Championnat de France de Basket 3X3 - Rennes";
 const dateThree = new Date('2023-07-27T12:30:00');
 const titleFour = "Anniversaire Lucie";
