@@ -1,43 +1,56 @@
 var curr = new Date;
 var date = new Date(curr.setDate(curr.getDate() - curr.getDay()+5));
-date.setHours(17,30,00);
-const titleTwo = "Festival du roi Arthur - Bréal";
-const dateTwo = new Date('2023-08-25T14:00:00');
-const titleThree = "Championnat de France de Basket 3X3 - Rennes";
-const dateThree = new Date('2023-07-27T12:30:00');
-const titleFour = "Anniversaire Lucie";
-const dateFour = new Date('2024-04-26T00:00:00');
-var titleCustom = localStorage.getItem('title');
-var dateCustom = new Date(localStorage.getItem('date'));
+date.setHours(17,30,0);
+const emojis = [''];
+const titleTwo = "Festival du roi Arthur - Bréal"
+, dateTwo = new Date('2023-08-25T14:00:00')
+, emojisTwo = ['🎶','🎷','🎸','🎵'];
+const titleThree = "Championnat de France de Basket 3X3 - Rennes"
+, dateThree = new Date('2023-07-27T12:30:00')
+, emojisThree = ['🏀', '🏆'];
+const titleFour = "Anniversaire Lucie"
+, dateFour = new Date('2024-04-26T00:00:00')
+, emojisFour = ['🎉','🎂','🎁'];
+var titleCustom = localStorage.getItem('title')
+, dateCustom = new Date(localStorage.getItem('date'));
+
   
 function weekend(){
   date = new Date(curr.setDate(curr.getDate() -   curr.getDay()+5));
-  date.setHours(17,30,00);
+  date.setHours(17,30,0);
   document.getElementById("title").innerHTML = "Isa-Weekend";
   removeActive();
 document.getElementById("weekend").classList.add("button-active");
-  fireChange();
+setTimeout(fireChange(emojis), 0);
+setTimeout(fireChange(emojis), 100);
+setTimeout(fireChange(emojis), 200);
 }
 
 function buttonTwo(){
   date = dateTwo;
   document.getElementById("title").innerHTML = titleTwo;
   removeActive(); document.getElementById("button-2").classList.add("button-active");
-  
-  fireChange();
+  setTimeout(fireChange(emojisTwo), 0);
+  setTimeout(fireChange(emojisTwo), 100);
+  setTimeout(fireChange(emojisTwo), 200);
 }
 
 function buttonThree(){
   date = dateThree;
   document.getElementById("title").innerHTML = titleThree;
   removeActive(); document.getElementById("button-3").classList.add("button-active");
-  fireChange_basketball();
+  setTimeout(fireChange(emojisThree), 0);
+  setTimeout(fireChange(emojisThree), 100);
+  setTimeout(fireChange(emojisThree), 200);
 }
+
 function buttonFour(){
   date = dateFour;
   document.getElementById("title").innerHTML = titleFour;
   removeActive(); document.getElementById("button-4").classList.add("button-active");
-  fireChange();
+  setTimeout(fireChange(emojisFour), 0);
+  setTimeout(fireChange(emojisFour), 100);
+  setTimeout(fireChange(emojisFour), 200);
 }
 
 function buttonCustom(){
@@ -48,7 +61,9 @@ function buttonCustom(){
   date = dateCustom;
   document.getElementById("title").innerHTML = titleCustom;
   document.getElementById("button-custom").classList.add("button-active");
-  fireChange();
+  setTimeout(fireChange(), 0);
+  setTimeout(fireChange(), 100);
+  setTimeout(fireChange(), 200);
 }
 
 // countdownf48322
@@ -85,147 +100,6 @@ let timer = setInterval(function() {
 </div>";
 
 }, 1000);
-
-const count = 200,
-  defaults = {
-    origin: { y: 0.7 },
-  };
-
-const defaults3 = {
-  spread: 360,
-  ticks: 100,
-  gravity: 0,
-  decay: 0.94,
-  startVelocity: 30,
-};
-
-function fire(particleRatio, opts) {
-  confetti(
-    Object.assign({}, defaults, opts, {
-      particleCount: Math.floor(count * particleRatio),
-    })
-  );
-}
-function end(){
-const duration = 5 * 1000,
-  animationEnd = Date.now() + duration,
-  defaults2 = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
-
-function randomInRange(min, max) {
-  return Math.random() * (max - min) + min;
-}
-
-
-  const interval = setInterval(function() {
-    const timeLeft = animationEnd - Date.now();
-
-    if (timeLeft <= 0) {
-      return clearInterval(interval);
-    }
-
-    const particleCount = 50 * (timeLeft / duration);
-
-    // since particles fall down, start a bit higher than random
-    confetti(
-      Object.assign({}, defaults2, {
-        particleCount,
-        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-      })
-    );
-    confetti(
-      Object.assign({}, defaults2, {
-        particleCount,
-        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
-      })
-    );
-  }, 250);
-}
-
-function end_emojis(){
-const duration = 5 * 1000,
-  animationEnd = Date.now() + duration,
-  defaults2 = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
-
-function randomInRange(min, max) {
-  return Math.random() * (max - min) + min;
-}
-
-
-  const interval = setInterval(function() {
-    const timeLeft = animationEnd - Date.now();
-
-    if (timeLeft <= 0) {
-      return clearInterval(interval);
-    }
-
-    const particleCount = 50 * (timeLeft / duration);
-
-    // since particles fall down, start a bit higher than random
-    confetti(
-      Object.assign({}, defaults2, {
-        particleCount,
-        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-      })
-    );
-    confetti(
-      Object.assign({}, defaults2, {
-        particleCount,
-        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
-      })
-    );
-  }, 250);
-}
-
-function fireChange(){
-  fire(0.25, {
-  spread: 26,
-  startVelocity: 55,
-  });
-
-  fire(0.2, {
-    spread: 60,
-  });
-
-  fire(0.35, {
-    spread: 100,
-    decay: 0.91,
-    scalar: 0.8,
-  });
-
-  fire(0.1, {
-    spread: 120,
-    startVelocity: 25,
-    decay: 0.92,
-    scalar: 1.2,
-  });
-
-  fire(0.1, {
-    spread: 120,
-    startVelocity: 45,
-  });
-}
-
-function fireChange_basketball(){
-  confetti({
-    ...defaults,
-    particleCount: 30,
-    scalar: 1.2,
-    shapes: ["circle", "square"],
-    colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"],
-  });
-
-  confetti({
-    ...defaults,
-    particleCount: 20,
-    scalar: 2,
-    shapes: ["text"],
-    shapeOptions: {
-      text: {
-        value: ["🏀", "🏆"],
-      },
-    },
-  });
-}
 
 function removeActive(){
   document.getElementById("div-custom").style.display = 'none';
