@@ -1,29 +1,39 @@
 var curr = new Date;
-var date = new Date(curr.setDate(curr.getDate() - curr.getDay()+5));
+var date = new Date;
 date.setHours(17,30,0);
 const emojis = [''];
-const titleTwo = "Retour du Isa-Friday"
-, dateTwo = new Date('2023-09-29T18:00:00')
-, emojisTwo = ['🍻','🍷','🍸','🎉'];
-const titleThree = "Déménagement Isagence de Rennes"
-, dateThree = new Date('2023-09-18T09:00:00')
-, emojisThree = ['🚚', '🏢', '🔑'];
+const titleTwo = "Isa Raclette Party"
+, dateTwo = new Date('2023-12-13T12:00:00')
+, emojisTwo = ['🍻','🎄','🧀','🎉'];
+const titleThree = "Isa Café Croissant"
+, dateThree = new Date('2023-09-19T09:00:00')
+, emojisThree = ['🥐', '☕'];
 const titleFour = "Anniversaire Lucie"
 , dateFour = new Date('2024-04-26T00:00:00')
 , emojisFour = ['🎉','🎂','🎁'];
 var titleCustom = localStorage.getItem('title')
 , dateCustom = new Date(localStorage.getItem('date'));
 
-  
+function today(){
+  date = new Date;
+  date.setHours(17,30,0);
+  document.getElementById("title").innerHTML = "Isa fin de journée";
+  removeActive();
+  document.getElementById("today").classList.add("button-active");
+  setTimeout(fireChange(emojis), 0);
+  setTimeout(fireChange(emojis), 100);
+  setTimeout(fireChange(emojis), 200);
+}
 function weekend(){
+  curr = new Date;
   date = new Date(curr.setDate(curr.getDate() -   curr.getDay()+5));
   date.setHours(17,30,0);
   document.getElementById("title").innerHTML = "Isa-Weekend";
   removeActive();
-document.getElementById("weekend").classList.add("button-active");
-setTimeout(fireChange(emojis), 0);
-setTimeout(fireChange(emojis), 100);
-setTimeout(fireChange(emojis), 200);
+  document.getElementById("weekend").classList.add("button-active");
+  setTimeout(fireChange(emojis), 0);
+  setTimeout(fireChange(emojis), 100);
+  setTimeout(fireChange(emojis), 200);
 }
 
 function buttonTwo(){
