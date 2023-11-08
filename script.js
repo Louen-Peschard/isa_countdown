@@ -5,12 +5,15 @@ const emojis = [''];
 const titleTwo = "Isa Raclette Party"
 , dateTwo = new Date('2023-12-13T12:00:00')
 , emojisTwo = ['🍻','🎄','🧀','🎉'];
-const titleThree = "Isa Café Croissant"
-, dateThree = new Date('2023-10-19T09:00:00')
-, emojisThree = ['🥐', '☕'];
-const titleFour = "Anniversaire Lucie"
-, dateFour = new Date('2024-04-26T00:00:00')
-, emojisFour = ['🎉','🎂','🎁'];
+const titleThree = "Isa Friday"
+, dateThree = new Date('2023-11-24T19:00:00')
+, emojisThree = ['🍻', '🍷', '🍸'];
+const titleFour = "Match Rennes-Reims"
+, dateFour = new Date('2024-11-26T15:00:00')
+, emojisFour = ['⚽','🏟'];
+const titleFive = "Anniversaire Lucie"
+, dateFive = new Date('2024-04-26T00:00:00')
+, emojisFive = ['🎉','🎂','🎁'];
 var titleCustom = localStorage.getItem('title')
 , dateCustom = new Date(localStorage.getItem('date'));
 
@@ -58,6 +61,14 @@ function buttonFour(){
   date = dateFour;
   document.getElementById("title").innerHTML = titleFour;
   removeActive(); document.getElementById("button-4").classList.add("button-active");
+  setTimeout(fireChange(emojisFour), 0);
+  setTimeout(fireChange(emojisFour), 100);
+  setTimeout(fireChange(emojisFour), 200);
+}
+function buttonFive(){
+  date = dateFour;
+  document.getElementById("title").innerHTML = titleFive;
+  removeActive(); document.getElementById("button-5").classList.add("button-active");
   setTimeout(fireChange(emojisFour), 0);
   setTimeout(fireChange(emojisFour), 100);
   setTimeout(fireChange(emojisFour), 200);
