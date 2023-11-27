@@ -1,6 +1,5 @@
 var curr = new Date;
 var date = new Date;
-var bar = document.querySelector(".progress-bar");
 date.setHours(17,30,0);
 const emojis = [''];
 const titleTwo = "Isa Raclette Party"
@@ -100,6 +99,8 @@ let timer = setInterval(function() {
 
   let startDate;
   let diffPercent = 0;
+  let bar = document.querySelector(".progress-bar");
+  
   if(document.getElementById("title").innerHTML == "Isa fin de journée"){
     document.getElementById("container-bar").style.display = 'flex';
     document.getElementById("text-bar").style.display = 'flex';
