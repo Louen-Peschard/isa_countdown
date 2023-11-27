@@ -1,5 +1,6 @@
 var curr = new Date;
 var date = new Date;
+bar = document.querySelector(".progress-bar");
 date.setHours(17,30,0);
 const emojis = [''];
 const titleTwo = "Isa Raclette Party"
