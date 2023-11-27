@@ -97,6 +97,36 @@ let timer = setInterval(function() {
   let diff;
   diff = date.getTime() - today;
 
+  let startDate;
+  let diffPercent = 0;
+  if(document.getElementById("title").innerHTML == "Isa fin de journée"){
+    document.getElementById("container-bar").style.display = 'flex';
+    document.getElementById("text-bar").style.display = 'flex';
+    startDate = new Date;
+    startDate.setHours(8,30,0);
+    diffPercent =((today - startDate) / (date.getTime() - startDate)) * 100;
+  if(diffPercent > 100)
+    diffPercent = 100;
+  bar.style.width = diffPercent + "%";
+    document.querySelector(".text-bar").innerHTML = `<p>${Math.round(diffPercent)}%</p>`;
+  }
+  else if(document.getElementById("title").innerHTML == "Isa-Weekend"){
+    document.getElementById("container-bar").style.display = 'flex';
+    document.getElementById("text-bar").style.display = 'flex';
+    startDate = new Date(curr.setDate(curr.getDate() - curr.getDay()));
+    startDate.setHours(8,30,0);
+    diffPercent =((today - startDate) / (date.getTime() - startDate)) * 100;
+  if(diffPercent > 100)
+    diffPercent = 100;
+  bar.style.width = diffPercent + "%";
+    document.querySelector(".text-bar").innerHTML = `<p>${Math.round(diffPercent)}%</p>`;
+  }
+  else{
+    document.getElementById("container-bar").style.display = 'none';
+    document.getElementById("text-bar").style.display = 'none';
+  }
+
+  
   if(diff < 0){
     diff = today - today;
     end();
