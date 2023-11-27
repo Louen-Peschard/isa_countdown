@@ -308,9 +308,12 @@
         display: flex;
         align-items: center;
         padding: 2px;
+	justify-self: center;
       }
       .text-bar {
+        font-weight: bold;
         color: white;
+        justify-self: center;
       }
       .progress-bar {
         height: 60%;
