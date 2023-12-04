@@ -117,12 +117,24 @@ let timer = setInterval(function() {
     document.getElementById("text-bar").style.display = 'flex';
     startDate = new Date(curr.setDate(curr.getDate() - curr.getDay()));
     startDate.setHours(8,30,0);
-    diffPercent =((today - startDate) / (date.getTime() - startDate)) * 100;
+    diffPercent =((today - startDate) / (date - startDate)) * 100;
   if(diffPercent > 100)
     diffPercent = 100;
   bar.style.width = diffPercent + "%";
     document.querySelector(".text-bar").innerHTML = `<p>${Math.round(diffPercent)}%</p>`;
   }
+    else if(document.getElementById("title").innerHTML == "Anniversaire Lucie"){
+       document.getElementById("container-bar").style.display = 'flex';
+    document.getElementById("text-bar").style.display = 'flex';
+    startDate = date;
+    startDate.setFullYear(startDate.getFullYear() - 1 );
+    startDate.setHours(0,0,0);
+    diffPercent =((today - startDate) / (date.getTime() - startDate)) * 100;
+  if(diffPercent > 100)
+    diffPercent = 100;
+  bar.style.width = diffPercent + "%";
+    document.querySelector(".text-bar").innerHTML = `<p>${Math.round(diffPercent)}%</p>`;
+}
   else{
     document.getElementById("container-bar").style.display = 'none';
     document.getElementById("text-bar").style.display = 'none';
