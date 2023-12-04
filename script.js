@@ -129,7 +129,7 @@ let timer = setInterval(function() {
     startDate = date;
     startDate.setFullYear(startDate.getFullYear() - 1 );
     startDate.setHours(0,0,0);
-    diffPercent =((today - startDate) / (date.getTime() - startDate)) * 100;
+    diffPercent =((today - startDate) / (date - startDate)) * 100;
   if(diffPercent > 100)
     diffPercent = 100;
   bar.style.width = diffPercent + "%";
