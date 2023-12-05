@@ -123,7 +123,7 @@ let timer = setInterval(function() {
   bar.style.width = diffPercent + "%";
     document.querySelector(".text-bar").innerHTML = `<p>${Math.round(diffPercent)}%</p>`;
   }
-    else if(document.getElementById("title").innerHTML == "Anniversaire Lucie"){
+    /*else if(document.getElementById("title").innerHTML == "Anniversaire Lucie"){
        document.getElementById("container-bar").style.display = 'flex';
     document.getElementById("text-bar").style.display = 'flex';
     startDate = dateFive;
@@ -134,7 +134,7 @@ let timer = setInterval(function() {
     diffPercent = 100;
   bar.style.width = diffPercent + "%";
     document.querySelector(".text-bar").innerHTML = `<p>${Math.round(diffPercent)}%</p>`;
-}
+}*/
   else{
     document.getElementById("container-bar").style.display = 'none';
     document.getElementById("text-bar").style.display = 'none';
