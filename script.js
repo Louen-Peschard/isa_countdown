@@ -126,7 +126,7 @@ let timer = setInterval(function() {
   else if(document.getElementById("title").innerHTML == "Anniversaire Lucie"){
     document.getElementById("container-bar").style.display = 'flex';
     document.getElementById("text-bar").style.display = 'flex';
-    startDate = dateFive;
+    startDate = new Date(dateFive);
     startDate.setFullYear(startDate.getFullYear() - 1 );
     startDate.setHours(0,0,0);
     diffPercent = ((today - startDate) / (date - startDate)) * 100;
