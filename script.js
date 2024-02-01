@@ -4,13 +4,13 @@ date.setHours(17,30,0);
 const emojis = [''];
 const titleTwo = "Isa-Team F&O"
 , dateTwo = new Date('2024-02-16T08:30:00')
-, emojisTwo = ['🍻','🎄','🧀','🎉'];
+, emojisTwo = ['🍻','🎉'];
 const titleThree = "GoLive Codifrance"
 , dateThree = new Date('2024-04-01T06:00:00')
-, emojisThree = ['🍪', '🥂', '🥠'];
+, emojisThree = ['🏪', '🥂', '🏬'];
 const titleFour = "Isa pose tes congés"
-, dateFour = new Date('2023-04-01T00:00:00')
-, emojisFour = ['🎁','❄','🎄'];
+, dateFour = new Date('2024-04-01T00:00:00')
+, emojisFour = ['💰','✈'];
 const titleFive = "Anniversaire Lucie"
 , dateFive = new Date('2024-04-26T00:00:00')
 , emojisFive = ['🎉','🎂','🎁'];
