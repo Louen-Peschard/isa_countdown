@@ -2,11 +2,11 @@ var curr = new Date;
 var date = new Date;
 date.setHours(17,30,0);
 const emojis = [''];
-const titleTwo = "Jeux Olympiques"
-, dateTwo = new Date('2024-07-26T20:00:00')
+const titleTwo = "Jeux Paralympiques"
+, dateTwo = new Date('2024-08-28T20:00:00')
 , emojisTwo = ['🤾‍♂️','🤺','🏊‍♀️','🤼'];
-const titleThree = "Pont de l'assomption"
-, dateThree = new Date('2024-08-14T17:30:00')
+const titleThree = "Toussaint (lendemain)"
+, dateThree = new Date('2024-10-31T17:30:00')
 , emojisThree = ['🎉', '🏖', '✈'];
 const titleFour = "Heure d'Hiver"
 , dateFour = new Date('2024-10-27T00:00:00')
