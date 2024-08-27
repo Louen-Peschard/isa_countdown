@@ -117,7 +117,10 @@ let timer = setInterval(function() {
     document.getElementById("text-bar").style.display = 'flex';
     startDate = new Date(curr.setDate(curr.getDate() - curr.getDay()));
     startDate.setHours(8,30,0);
-    diffPercent =((today - startDate) / (date - startDate)) * 100;
+    //journée de 9h (w/ pause)
+    diffPercent = ((today.getDay() - 1) * 9 + (Math.abs(today - startDate) / 36e5)) * 100 / 45);
+    if(today.getDay() == 0 || today.getDay() == 6)
+      diffPercent = 100;
   if(diffPercent > 100)
     diffPercent = 100;
   bar.style.width = diffPercent + "%";
