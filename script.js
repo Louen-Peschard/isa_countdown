@@ -122,11 +122,11 @@ let timer = setInterval(function() {
     if(now.getDay() == 0 || now.getDay() == 6)
         diffPercent = 100;
     else if(now.getHours() >= 17 && now.getMinutes() >= 30)
-        diffPercent = (now.getDay()) * 9) * 100 / 45;
+        diffPercent = (now.getDay() * 9) * 100 / 45;
     else if(now.getHours() <= 8 && now.getMinutes() < 30)
-        diffPercent = (now.getDay() - 1) * 9) * 100 / 45;
+        diffPercent = ((now.getDay() - 1) * 9) * 100 / 45;
     else
-      diffPercent = ((now.getDay() - 1) * 9 + (Math.abs(now - new Date().setHours(8,30,0)) / 36e5)) * 100 / 45;
+        diffPercent = ((now.getDay() - 1) * 9 + (Math.abs(now - new Date().setHours(8,30,0)) / 36e5)) * 100 / 45;
   if(diffPercent > 100)
     diffPercent = 100;
   bar.style.width = diffPercent + "%";
