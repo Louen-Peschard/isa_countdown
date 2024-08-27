@@ -119,7 +119,7 @@ let timer = setInterval(function() {
     startDate.setHours(8,30,0);
     //journée de 9h (w/ pause)
     diffPercent = ((new Date(today).getDay() - 1) * 9 + (Math.abs(new Date(today) - startDate) / 36e5)) * 100 / 45;
-    if(today.getDay() == 0 || today.getDay() == 6)
+    if(new Date(today).getDay() == 0 || new Date(today).getDay() == 6)
       diffPercent = 100;
   if(diffPercent > 100)
     diffPercent = 100;
